@@ -100,7 +100,7 @@ All fields, error codes and console commands: [docs/PROTOKOL.md](docs/PROTOKOL.m
 
 ## Support
 
-User guide, updates and support: [ilimera.com](https://ilimera.com/en/urunler/gelistirme-kartlari/lte-bridge) · info@ilimera.com.
+User guide, updates and support: [ilimera.com](https://ilimera.com/en/urunler/gelistirme-kartlari/lte-bridge).
 Open an **Issue** in this repository for bugs and suggestions.
 
 To drive the modem directly with AT commands, see the

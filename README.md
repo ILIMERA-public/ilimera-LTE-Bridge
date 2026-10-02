@@ -109,7 +109,7 @@ Tüm alanlar, hata kodları ve servis konsolu komutları: [docs/PROTOKOL.md](doc
 
 ## Destek
 
-Kullanıcı kılavuzu, güncellemeler ve destek için [ilimera.com](https://ilimera.com/urunler/gelistirme-kartlari/lte-bridge) · info@ilimera.com.
+Kullanıcı kılavuzu, güncellemeler ve destek için [ilimera.com](https://ilimera.com/urunler/gelistirme-kartlari/lte-bridge).
 Bir hata bulduysanız ya da öneriniz varsa bu depoda **Issue** açabilirsiniz.
 
 Modemi doğrudan AT komutlarıyla sürmek isterseniz aynı Cavli C16QS modülünü taşıyan
