@@ -57,27 +57,7 @@ a `"cmd"` field, so host code written today keeps working when new commands arri
 5. Wait for `internet OK` and a steady LED. The host line receives `{"evt":"ready","fw":"0.2.6"}`; you can now
    send requests.
 
-To try it from a PC before writing firmware, connect J6 through a 3.3 V USB-TTL adapter:
-
-```bash
-pip install pyserial
-python tools/lte_bridge_test.py COM5 https://httpbin.org/get
-python tools/lte_bridge_test.py COM5 https://httpbin.org/post --post '{"temperature":23.5}'
-```
-
-## Examples
-
-| Example | What it does |
-| --- | --- |
-| [01_Ilk_GET_Istegi](examples/01_Ilk_GET_Istegi) | ESP32: waits for `ready`, sends an HTTPS GET every 30 s, prints every line (no libraries) |
-| [02_Sensor_Verisi_POST](examples/02_Sensor_Verisi_POST) | ESP32 + ArduinoJson: POSTs a reading over HTTPS; handles the retry rules, bridge restarts and modem updates |
-| [03_Arduino_Mega_8bit](examples/03_Arduino_Mega_8bit) | HTTPS from an 8-bit Arduino Mega with no TLS library (Serial1, via a level shifter) |
-| [tools/lte_bridge_test.py](tools/lte_bridge_test.py) | Sends a single request from a PC through a USB-TTL adapter |
-
-`02_Sensor_Verisi_POST` needs **ArduinoJson** (v7); the others need no extra libraries. Replace the `httpbin.org`
-test URLs with your own server. Code comments are in Turkish with an English summary in each header.
-
-### Four rules for host code
+## Four rules for host code
 
 1. Send each request as **one line** ending with **`\n`**.
 2. **Wait for the result line** before sending the next request (one request is processed at a time).

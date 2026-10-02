@@ -70,8 +70,7 @@ Ayrıntılı anlatım: [kullanıcı kılavuzu (PDF)](ILIMERA_LTE_Bridge_kullanic
 | `mem` | Bellek yetmedi | Evet |
 
 **Kural:** `ok:false` ve yanında `status` varsa sunucu cevap verip reddetmiştir, tekrar denemek işe yaramaz.
-`status` yoksa sunucuya ulaşılamamıştır, tekrar denemek genelde işe yarar. Bu kuralın uygulanmış hâli:
-[`02_Sensor_Verisi_POST`](../examples/02_Sensor_Verisi_POST).
+`status` yoksa sunucuya ulaşılamamıştır, tekrar denemek genelde işe yarar.
 
 ## Sınırlar
 

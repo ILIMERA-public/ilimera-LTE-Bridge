@@ -20,7 +20,7 @@ köprü → host   {"id":1,"ok":true,"status":200,"ctype":"application/json","bo
 - [Özellikler](#özellikler)
 - [Bağlantılar](#bağlantılar)
 - [Hızlı başlangıç](#hızlı-başlangıç)
-- [Örnekler](#örnekler)
+- [Host kodu yazarken dört kural](#host-kodu-yazarken-dört-kural)
 - [Protokol başvurusu](docs/PROTOKOL.md)
 - [Sorun giderme](#sorun-giderme)
 
@@ -66,27 +66,7 @@ Planlananlar (uzaktan güncellemeyle gelecek): MQTT, ham TCP/UDP soketleri, TLS 
 5. `internet OK` satırını ve sabit yanan LED'i bekleyin. Host hattına şu satır düşer:
    `{"evt":"ready","fw":"0.2.6"}`. Artık istek gönderebilirsiniz.
 
-Mikrodenetleyici kodu yazmadan önce bilgisayardan denemek için J6'yı 3.3 V bir USB-TTL dönüştürücüyle bağlayın:
-
-```bash
-pip install pyserial
-python tools/lte_bridge_test.py COM5 https://httpbin.org/get
-python tools/lte_bridge_test.py COM5 https://httpbin.org/post --post '{"sicaklik":23.5}'
-```
-
-## Örnekler
-
-| Örnek | Ne yapar |
-| --- | --- |
-| [01_Ilk_GET_Istegi](examples/01_Ilk_GET_Istegi) | ESP32: `ready` olayını bekler, 30 saniyede bir HTTPS GET gönderir, gelen satırları basar (kütüphanesiz) |
-| [02_Sensor_Verisi_POST](examples/02_Sensor_Verisi_POST) | ESP32 + ArduinoJson: ölçümü HTTPS POST eder; kılavuzdaki yeniden deneme kurallarını, köprü yeniden başlamasını ve modem güncellemesini yönetir |
-| [03_Arduino_Mega_8bit](examples/03_Arduino_Mega_8bit) | 8-bit Arduino Mega'dan TLS kütüphanesi olmadan HTTPS (Serial1, seviye dönüştürücüyle) |
-| [tools/lte_bridge_test.py](tools/lte_bridge_test.py) | Bilgisayardan USB-TTL ile tek istek gönderip sonucu gösterir |
-
-`02_Sensor_Verisi_POST` için Kütüphane Yöneticisi'nden **ArduinoJson** (v7) kurun. Diğer örnekler ek kütüphane
-gerektirmez. Örneklerdeki `httpbin.org` adresleri deneme içindir, kendi sunucu adresinizle değiştirin.
-
-### Host kodu yazarken dört kural
+## Host kodu yazarken dört kural
 
 1. Her isteği **tek satır** olarak gönderin ve **`\n` ile bitirin**.
 2. Bir sonraki isteği göndermeden önce öncekinin **sonuç satırını bekleyin** (aynı anda tek istek işlenir).
